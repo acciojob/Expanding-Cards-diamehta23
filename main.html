@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Expanding Cards</title>
   <style>
     * {
@@ -12,41 +11,43 @@
     }
 
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f0f0f0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
 
     .container {
       display: flex;
       width: 90vw;
-      gap: 10px;
       max-width: 1200px;
+      gap: 10px;
     }
 
     .panel {
+      flex: 0.5;
+      height: 80vh;
+      border-radius: 30px;
       background-size: cover;
       background-position: center;
-      height: 80vh;
-      border-radius: 50px;
+      transition: flex 0.6s ease-in-out;
       color: white;
-      flex: 0.5;
-      position: relative;
-      cursor: pointer;
-      transition: flex 0.5s ease-in;
       display: flex;
       align-items: flex-end;
-      justify-content: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
 
     .panel h3.img-text {
+      opacity: 0;
       font-size: 20px;
       padding: 20px;
-      opacity: 0;
-      transition: opacity 0.3s ease-in;
+      transition: opacity 0.3s ease-in-out;
+      text-shadow: 0 0 5px black;
     }
 
     .panel.active {
@@ -59,6 +60,7 @@
   </style>
 </head>
 <body>
+
   <div class="container">
     <div class="panel active" id="panel-1" style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=1350&q=80')">
       <h3 class="img-text">Explore the world</h3>
@@ -87,5 +89,6 @@
       });
     });
   </script>
+
 </body>
 </html>
